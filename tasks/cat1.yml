@@ -4,6 +4,7 @@
           state: present
           key: "{{ rhel6stig_gpg_key_loc.redhat }}"
       when: "ansible_distribution == 'RedHat'"
+      ignore_errors: yes
 
     - name: "HIGH | V-38476 | PATCH | Vendor-provided cryptographic certificates must be installed to verify the integrity of system software"
       rpm_key:
