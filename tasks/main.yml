@@ -10,7 +10,7 @@
       that: ansible_version.full | version_compare(rhel6stig_min_ansible_version, '>=')
       msg: You must use Ansible {{ rhel6stig_min_ansible_version }} or greater
   tags:
-      - always
+      - never
 
 - include: prelim.yml
   become: yes
